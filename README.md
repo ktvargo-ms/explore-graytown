@@ -1,6 +1,6 @@
 # Explore Graytown
 
-This repo is the source of tools, samples, tutorials, and other resources for customers of Azure IoT Operations.
+This repo is the source of tools, samples, tutorials, and other resources for customers of Graytown.
 
 ## Features
 
