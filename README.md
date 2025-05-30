@@ -1,4 +1,4 @@
-# Explore IoT Operations
+# Explore Graytown
 
 This repo is the source of tools, samples, tutorials, and other resources for customers of Azure IoT Operations.
 
@@ -7,8 +7,7 @@ This repo is the source of tools, samples, tutorials, and other resources for cu
 This project provides the following:
 
 * Pre-configured codespace with [K3s](https://k3s.io/) cluster via [K3d](https://k3d.io/)
-* MQTT Device Simulator
-* HTTP & GRPC Callout Server
+* Graytown M4
 
 > [!IMPORTANT]
 > Codespaces are easy to setup quickly and tear down later, but they're not suitable for performance evaluation or scale testing. For those scenarios, use a validated environment from the official documentation.
@@ -17,9 +16,9 @@ This project provides the following:
 
 ## Getting Started
 
-1. Use this GitHub codespace to explore Azure IoT Operations in your browser without installing anything on your local machine.
+1. Use this GitHub codespace to explore Graytown in your browser without installing anything on your local machine.
 
-   [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/Azure-Samples/explore-iot-operations?quickstart=1)
+   [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/ktvargo-ms/explore-graytown?quickstart=1)
 
 1. (Optional) Enter your Azure details to store them as environment variables inside the codespace.
 
