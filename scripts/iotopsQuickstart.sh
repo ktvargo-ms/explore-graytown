@@ -22,10 +22,11 @@ if [[ "$RESPONSE" != "y" ]]; then
 fi
 
 # Default values
-DEFAULT_LOCATION="westus2"
+#DEFAULT_LOCATION="westus2"
+DEFAULT_LOCATION="eastus2euap"
 DEFAULT_RESOURCE_GROUP="${CODESPACE_NAME:-default-rg}"
-CLUSTER_NAME="iotops-quickstart-cluster"
-SUPPORTED_LOCATIONS=("eastus" "eastus2" "westus2" "westus" "westeurope" "northeurope")
+CLUSTER_NAME="graytown-quickstart-cluster"
+SUPPORTED_LOCATIONS=("eastus" "eastus2" "westus2" "westus" "westeurope" "northeurope","eastus2euap")
 
 # Prompt for custom values
 read -p "Provide custom location and resource group? (y/n): " CUSTOM_VALUES
@@ -208,7 +209,13 @@ else
     echo "IoT Operations instance '$INSTANCE_NAME' already exists."
 fi
 
+# Create Graytown instance if it doesn't exist
+
 echo "export INSTANCE_NAME=\"$INSTANCE_NAME\"" >> "$ENV_VARS_FILE"
+echo "Creating Graytown instance '$INSTANCE_NAME'..."
+# Install cert-manager 
+az k8s-extension create --cluster-name "$CLUSTER_NAME" --name "aio-certmgr" --resource-group "$RESOURCE_GROUP" --cluster-type connectedClusters --extension-type microsoft.iotoperations.platform --scope cluster --release-namespace cert-manager
+az vme install --cluster-name "$CLUSTER_NAME" --resource-group "$RESOURCE_GROUP" -i all
 
 # Completion message
 echo -e "\n$(print_green 'Setup completed successfully!')"
