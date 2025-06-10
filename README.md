@@ -25,17 +25,25 @@ https://github.com/codespaces/new?repository=ktvargo-ms/explore-graytown&ref=mai
 
 1. **Important**: Open the codespace in VS Code Desktop with **Ctrl/Cmd + Shift + P** > **Codespaces: Open in VS Code Desktop**. This is required to login to Azure CLI properly.
 
-1. Connect your new cluster to Azure Arc.
+1. Login into Azure and run the arcConnect.sh script to connect your new cluster to Azure Arc and install VME.
 
    ```bash
    az login
-   az account set -s $SUBSCRIPTION_ID
-   az connectedk8s connect -n $CLUSTER_NAME -g $RESOURCE_GROUP -l $LOCATION
+   scripts/arcConnect.sh
    ```
 
-2. Follow [Azure IoT Operations docs](https://learn.microsoft.com/azure/iot-operations/get-started/quickstart-deploy?tabs=codespaces) to finish deploying.
 
-3. Explore!
+2. Explore!
+```bash
+kubectl get pods -A
+```
+
+3. Install WordPress
+```bash 
+kubectl apply -k WordPress/.
+```
+
+4. Finish WordPress install with WordPress README.md
 
 ## Contributing
 
