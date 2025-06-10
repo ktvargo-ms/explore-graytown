@@ -1,0 +1,17 @@
+apiVersion: secrets-store.csi.x-k8s.io/v1
+kind: SecretProviderClass
+metadata:
+  name: secret-provider-class-name                      # Name of the class; must be unique per Kubernetes namespace
+  namespace: my-namespace                    # Kubernetes namespace to make the secrets accessible in
+spec:
+  provider: azure
+  parameters:
+    clientID: "a3cdc194-0a98-49be-9bbc-96e3dd39330e"               # Managed Identity Client ID for accessing the Azure Key Vault with.
+    keyvaultName: my-kv-kv-test                       # The name of the Azure Key Vault to synchronize secrets from.
+    objects: |
+      array:
+        - |
+          objectName: my-secret            # The name of the secret to sychronize.
+          objectType: secret
+          objectVersionHistory: 2                       # [optional] The number of versions to synchronize, starting from latest.
+    tenantID: "510e02cd-c7e9-483c-b591-9047eb387e61"                       # The tenant ID of the Key Vault 

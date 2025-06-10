@@ -1,0 +1,15 @@
+apiVersion: secret-sync.x-k8s.io/v1alpha1
+kind: SecretSync
+metadata:
+  name: secret-sync-name                                  # Name of the object; must be unique per Kubernetes namespace
+  namespace: my-namespace                      # Kubernetes namespace
+spec:
+  serviceAccountName: my-service-account             # The Kubernetes service account to be given permissions to access the secret.
+  secretProviderClassName: secret-provider-class-name     # The name of the matching SecretProviderClass with the configuration to access the AKV storing this secret
+  secretObject:
+    type: Opaque
+    data:
+    - sourcePath: my-secret/0                # Name of the secret in Azure Key Vault with an optional version number (defaults to latest)
+      targetKey: my-secret-data-key0         # Target name of the secret in the Kubernetes secret store (must be unique)
+    - sourcePath: my-secret/1                # [optional] Next version of the AKV secret. Note that versions of the secret must match the configured objectVersionHistory in the secrets provider class 
+      targetKey: my-secret-data-key1         # [optional] Next target name of the secret in the K8s secret store
