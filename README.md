@@ -18,6 +18,13 @@ This project provides the following:
 
 1. Use this GitHub codespace to explore Graytown in your browser without installing anything on your local machine.
 
+2. ## 🚀 Quickstart in Codespaces
+
+Click the button below to launch a preconfigured development environment in GitHub Codespaces:
+
+!Open in Codespaces
+
+
    [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/ktvargo-ms/explore-graytown&ref=main)
 https://github.com/codespaces/new?repository=ktvargo-ms/explore-graytown&ref=main
 
