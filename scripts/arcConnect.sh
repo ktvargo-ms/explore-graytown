@@ -127,3 +127,13 @@ EOL
     echo -e "\033[32msource $SCRIPT_DIR/env_vars.txt\033[0m"
 
 fi
+
+# Install cert-manager
+  echo -e "\n Installing cert-manger pre-req"
+az k8s-extension create --cluster-name "$CLUSTER_NAME" --name "aio-certmgr" --resource-group "$RESOURCE_GROUP" --cluster-type connectedClusters --extension-type microsoft.iotoperations.platform --scope cluster --release-namespace cert-manager
+  echo -e "\n Installing VME"
+#Install VME 
+az vme install --cluster-name "$CLUSTER_NAME" --resource-group "$RESOURCE_GROUP" -i all
+  echo -e "\n List VME"
+# show install extensions
+az vme list  --cluster-name "$CLUSTER_NAME" --resource-group "$RESOURCE_GROUP" --output table
