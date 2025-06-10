@@ -6,7 +6,7 @@
 
    Ctrl/Cmd + Shift + P > Codespaces: Open in VS Code Desktop
 
-📎 Connect your new cluster to Azure Arc:
+📎 Login into Azure and run the arcConnect.sh script to connect your new cluster to Azure Arc and install VME.
    
    az login --use-device-code
    scripts/arcConnect.sh
