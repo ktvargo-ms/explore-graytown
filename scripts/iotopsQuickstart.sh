@@ -22,11 +22,11 @@ if [[ "$RESPONSE" != "y" ]]; then
 fi
 
 # Default values
-#DEFAULT_LOCATION="westus2"
-DEFAULT_LOCATION="eastus2euap"
+DEFAULT_LOCATION="westus2"
+#DEFAULT_LOCATION="eastus2euap"
 DEFAULT_RESOURCE_GROUP="${CODESPACE_NAME:-default-rg}"
-CLUSTER_NAME="graytown-quickstart-cluster"
-SUPPORTED_LOCATIONS=("eastus" "eastus2" "westus2" "westus" "westeurope" "northeurope","eastus2euap")
+CLUSTER_NAME="vme-quickstart-cluster"
+SUPPORTED_LOCATIONS=("eastus" "eastus2" "westus2" "westus" "westeurope" "northeurope")
 
 # Prompt for custom values
 read -p "Provide custom location and resource group? (y/n): " CUSTOM_VALUES
