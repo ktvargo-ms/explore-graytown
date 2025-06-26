@@ -1,6 +1,6 @@
 # Version-Managed Extensions: Cloud Ingest Edge Volume on a Ubuntu K3s Cluster with an SFTP Front End
 
-This example can be used to install version-managed extensions to provide a ReadWriteMany Cloud Ingest Edge Volume on an Ubuntu K3s and an SFTP front end. This allows you all the functionality of the base product as well as being able to accept writes from SFTP clients. 
+This example can be used to create a ReadWriteMany Cloud Ingest Edge Volume on an Ubuntu K3s cluster and an SFTP front end. This allows you all the functionality of the base product as well as being able to accept writes from SFTP clients. 
 Cloud Ingest edge volumes will transfer files saved to the volume to cloud and purge the local copy, according to your ingest policy. 
 
 > ⚠️ **Disclaimer:** Version-managed extensions is currently in public preview. Access to the feature is limited and subject to specific terms and conditions. For further details and updates on availability, please refer to the [Version-managed extensoins for Arc-enabled Kubernetes](https://learn.microsoft.com/en-us/azure/azure-arc/kubernetes/managed-extensions).
@@ -23,8 +23,10 @@ export YOUR-SUBSCRIPTION="your-subscription-id-here"
 export YOUR-CLUSTER-NAME="myArcClusterName"
 export YOUR-STORAGEACCOUNT="myStorageAccountName"
 ```
+### Configure ACSA 
 
-az k8s-extension create --resource-group "${YOUR-RESOURCE-GROUP}" --cluster-name "${YOUR-CLUSTER-NAME}" --cluster-type connectedClusters --name "acsa-`mktemp -u XXXXXX`" --extension-type microsoft.arc.containerstorage --config feature.diskStorageClass="default,local-path" --config  edgeStorageConfiguration.create=true
+```bash
+az k8s-extension update --resource-group "${YOUR-RESOURCE-GROUP}" --cluster-name "${YOUR-CLUSTER-NAME}" --cluster-type connectedClusters --name azure.arc.containerstorage --config feature.diskStorageClass="default,local-path" --config  edgeStorageConfiguration.create=true
 ```
 
 ### Assign role to storage account
