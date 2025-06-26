@@ -5,6 +5,10 @@ Cloud Ingest edge volumes will transfer files saved to the volume to cloud and p
 
 > ⚠️ **Disclaimer:** Version-managed extensions is currently in public preview. Access to the feature is limited and subject to specific terms and conditions. For further details and updates on availability, please refer to the [Version-managed extensoins for Arc-enabled Kubernetes](https://learn.microsoft.com/en-us/azure/azure-arc/kubernetes/managed-extensions).
 
+
+### Install VME
+Please refer to the [Version-managed extensoins for Arc-enabled Kubernetes](https://learn.microsoft.com/en-us/azure/azure-arc/kubernetes/managed-extensions) for instructions on installation. 
+
 ### Set your environment variables
 Use the following table to determine the values to be used in the export block below. If you exit your shell during configuration before you have completed all the steps, you must re-export the variables before continuing.  
 
