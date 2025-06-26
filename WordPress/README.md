@@ -29,8 +29,8 @@ It can take up to a few minutes for the PVs to be provisioned and bound.
 The response should be like this:
 ```bash
 NAME             STATUS    VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS       AGE
-mysql-pv-claim   Bound     pvc-8cbd7b2e-4044-11e9-b2bb-42010a800002   20Gi       RWO            standard           77s
-wp-pv-claim      Bound     pvc-8cd0df54-4044-11e9-b2bb-42010a800002   20Gi       RWO            standard           77s
+mysql-pv-claim   Bound     pvc-8cbd7b2e-4044-11e9-b2bb-42010a800002   20Gi       RWO            unbacked-sc           77s
+wp-pv-claim      Bound     pvc-8cd0df54-4044-11e9-b2bb-42010a800002   20Gi       RWO            unbacked-sc           77s
 ```
 3. Verify that the Pod is running by running the following command:
 ```bash
